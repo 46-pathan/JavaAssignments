@@ -1,5 +1,8 @@
 package basicassignments;
 import java.util.*;
+
+//Write a Java program to Take three numbers from the user and print the greatest 
+//number. 
 public class GreatestNumber {
 
 	public static void main(String[] args) {
