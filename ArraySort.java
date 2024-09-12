@@ -28,29 +28,56 @@ public class ArraySort {
 			arr2[i]=sc.nextInt();
 		}
 		
+		System.out.println("Enter 1 for asceding arrays 2 for descending arrays");
+		int choice=sc.nextInt();
+		switch(choice) {
+		case 1:System.out.println("ascending arrays : ");
+				System.out.println("Array 1 sorted : ");
+				sortAscArray(arr1);
+				System.out.println("\nArray 2 sorted : ");
+				sortAscArray(arr2);
+		break;
+		case 2:System.out.println("descending arrays : ");
+				System.out.println("Array 1 sorted : ");
+				sortDscArray(arr1);
+				System.out.println("\nArray 2 sorted : ");
+				sortDscArray(arr2);
+		break;
+		}	
+		
 	}
 	
-	static void swap(int a, int b) {
-		int temp=a;
-		a=b;
-		b=temp;
-	}
-	static int[] sortAscArray(int[] arr) {
-		int min=0;
-		for(int i=0;i<arr.length;i++) {
-			min=arr[i];
-			for(int j=arr[i+1];j<arr.length;j++) {
-				if(min>arr[i+1]);
+	static void sortAscArray(int[] arr) {
+		for(int i=0;i<arr.length-1;i++) {
+			for(int j=i+1;j<arr.length;j++) {
+				if(arr[i]>arr[j]) {
+					int temp=arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
 			}
 		}
-		
-		return arr;
+		printArray(arr);
 	}
 	
-	static int[] sortDscArray(int[] arr) {
-		
-		
-		return arr;
+	static void sortDscArray(int[] arr) {
+		for(int i=0;i<arr.length-1;i++) {
+			for(int j=i+1;j<arr.length;j++) {
+				if(arr[i]<arr[j]) {
+					int temp=arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+			}
+		}
+		printArray(arr);
+	}
+	
+	static void printArray(int[] arr) {
+		for(int a:arr) {
+			System.out.print(a+" ");
+		}
+		System.out.println();
 	}
 
 }
